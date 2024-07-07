@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Days Since</title>
+    <title>Page with Linked Iframes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Oswald', sans-serif; /* Ensure Oswald is loaded and fallback to sans-serif */
-            padding: 20px;
-            margin: 0; /* Remove default body margin */
-            position: relative; /* Ensure relative positioning for absolute positioning */
-            color: #162B6F; /* Set text color */
-        }
-        .header {
-            position: absolute;
-            top: 0;
-            left: 0;
+            background-color: white;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            height: 100vh;
+            text-align: center;
         }
-        .header h1 {
-            margin: 0; /* Remove margin for h1 */
-            font-weight: 1000; /* Medium font weight */
+        .top-section, .bottom-section {
+            width: 100%;
         }
-        .header h1 + h1 {
-            margin-left: 20px; /* Add margin between the two h1 elements */
+        h1 {
+            color: #162B6F;
+            margin: 10px 0;
         }
-        #dayCount {
-            font-size: 36px;
-            margin: 0; /* Remove margin for #dayCount */
-            font-weight: 1000; /* Medium font weight */
+        h2 {
+            color: #162B6F;
+            margin: 5px 0; /* Reduced margin */
+			}
+        h3 {
+            color: #162B6F;
+            margin: 5px 0; /* Reduced margin */
+			}
+        }
+        .iframe-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px; /* Reduced gap */
+            width: 100%;
+        }
+        iframe {
+            border: 3px solid #162B6F;
+            width: 1000px; /* Global width */
+            height: 75px; /* Global height */
+            margin: 1px 0; /* Reduced margin */
         }
     </style>
-    <!-- Load Oswald font -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>Days&nbsp&nbsp&nbsp</h1>
-        <h1 id="dayCount">Calculating...</h1>
+    <div class="top-section">
+        <h1>Top Centered Heading</h1>
+        <h2>Below are five promises Labour made and how many days have elapsed since they came to power.</h2>
+		<h2>When they have reached a goal I will update. My SSL Runs out in 10 years though.</h2>
     </div>
-
-    <script>
-        // Calculate the number of days since a specific date
-        function updateDayCount() {
-            // Date to count from (YYYY-MM-DD format)
-            var startDate = new Date('2024-07-04');
-            var today = new Date();
-            
-            // Calculate the difference in milliseconds
-            var timeDiff = Math.abs(today.getTime() - startDate.getTime());
-            
-            // Convert milliseconds to days
-            var daysSince = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            
-            // Update the day count in the HTML
-            document.getElementById('dayCount').textContent = daysSince;
-        }
-
-        // Update the count initially and every day
-        updateDayCount();
-        setInterval(updateDayCount, 24 * 60 * 60 * 1000); // Update once per day
-    </script>
+    <div class="iframe-container">
+        <iframe src="Promise1/Promise1.html" title="Iframe 1"></iframe>
+        <iframe src="Promise2/Promise2.html" title="Iframe 2"></iframe>
+        <iframe src="Promise3/Promise3.html" title="Iframe 3"></iframe>
+        <iframe src="Promise4/Promise4.html" title="Iframe 4"></iframe>
+        <iframe src="Promise5/Promise5.html" title="Iframe 5"></iframe>
+    </div>
+    <div class="bottom-section">
+        <h2>These are pulled from "https://labour.org.uk/change/mission-driven-government/"</h2>
+        <h2>What metrics will they use to confirm that they have achieved a goal? I guess we will have to wait and see.</h2>
+		<h3>I promise that I am a web developer and did not use chat GPT for any of this</h3>
+    </div>
 </body>
 </html>
+
