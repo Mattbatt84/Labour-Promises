@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #E4003B; /* Set default font color for the body */
+}
+
+header, footer {
+    background-color: #333;
+    color: #ffff; /* Set font color for header and footer */
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.heading-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.heading-item h1 {
+    margin: 0;
+    flex-grow: 1; /* Allow heading to take up available space */
+    color: #E4003B; /* Set font color for headings */
+}
+
+.heading-item p {
+    margin: 0;
+    white-space: nowrap; /* Prevents text from wrapping */
+    font-size: 1.5em; /* Adjust the size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #E4003B; /* Set font color for days count */
+}
